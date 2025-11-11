@@ -1,0 +1,30 @@
+{
+  "name": "@akashic/actions-install",
+  "version": "1.0.0",
+  "description": "npm install --before and check package-lock.json",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "npm run clean && tsc -p ./ ",
+    "test": "echo test."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashic-games/actions-install.git"
+  },
+  "keywords": [],
+  "author": "DWANGO Co., Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akashic-games/actions-install/issues"
+  },
+  "homepage": "https://github.com/akashic-games/actions-install#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "rimraf": "^6.1.0",
+    "typescript": "^5.9.3"
+  }
+}
