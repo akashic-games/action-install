@@ -2,11 +2,11 @@
 
 指定されたリポジトリに対して以下の処理を行う Github Actions です。
 
-* npm install --before <date>
-* npm install 後に変更がある場合はエラーとし終了します。
+* `npm install --before <date>`
+* `npm install` 後に変更がある場合はエラーとし終了します。
 
 ## 入力パラメータ
-* `before_day`: npm install の before オプションで何日前を指定。(デフォルト: 7)
+* `before_days`: npm install の before オプションで何日前を指定。(デフォルト: 7)
 
 ### 利用例
 ```yml
@@ -15,8 +15,8 @@
 - name: npm install and check package-lock.json
   uses: akashic-games/action-install@v1
   with:
-    # before オプションで 10日前をターゲットとします。
-    before_day: 10
+    # npm install --before オプションで 10日前をターゲットとします。
+    before_days: 10
 ```
 
 ## ビルド方法
