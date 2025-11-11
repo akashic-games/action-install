@@ -1,23 +1,8 @@
-name: install package
+name: npm install and check package-lock
 description: npm install --before and check package-lock.json
 inputs:
-  github_token:
-    description: Github token for target repository
-    required: true
-  npm_token:
-    description: Npm token for target package
-    required: true
-  git_name:
-    description: The name of the git
-    required: false
-    default: github-actions
-  git_email:
-    description: The email of the git
-    required: false
-    default: 41898282+github-actions[bot]@users.noreply.github.com
-  suppress_release_creation:
-    description: Suppress a release creation
-    required: false
+  before_days:
+    description: How many days in advance should you target in before option
 runs:
   using: node20
   main: dist/index.js

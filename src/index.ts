@@ -2,7 +2,7 @@ import * as core from '@actions/core';
 import { execSync } from "child_process";
 
 const inputs = {
-	beforeDay: core.getInput("before_day")
+	beforeDays: core.getInput("before_days")
 };
 
 const BEFORE_DAYS = 7;
@@ -15,7 +15,7 @@ function makeBeforeDateValue(beforeDays: number): string {
 }
 
 try {
-    const beforDay = inputs.beforeDay ? parseInt(inputs.beforeDay) : BEFORE_DAYS;
+    const beforDay = inputs.beforeDays ? parseInt(inputs.beforeDays) : BEFORE_DAYS;
     const beforeDate = makeBeforeDateValue(beforDay);
     const npmInstallCmd = `npm i --before ${beforeDate}`;
     console.log(`- exec: "${npmInstallCmd}"`);
