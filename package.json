@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist/",
-    "build": "npm run clean && tsc -p ./ ",
+    "build": "npm run clean && npm run build:release",
+    "build:release": "ncc build ./src/index.ts -o ./dist",
     "test": "npm run lint:eslint",
     "lint:eslint": "eslint \"src/**/*.ts\" --fix"
   },
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@akashic/eslint-config": "3.0.2",
     "@types/node": "^24.10.0",
+    "@vercel/ncc": "^0.38.0",
     "rimraf": "^6.1.0",
     "typescript": "^5.9.3"
   }
