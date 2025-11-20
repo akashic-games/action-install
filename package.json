@@ -1,0 +1,34 @@
+{
+  "name": "@akashic/actions-install",
+  "version": "1.0.0",
+  "description": "npm install --before and check package-lock.json",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "npm run clean && npm run build:release",
+    "build:release": "ncc build ./src/index.ts -o ./dist",
+    "test": "npm run lint:eslint",
+    "lint:eslint": "eslint \"src/**/*.ts\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashic-games/actions-install.git"
+  },
+  "keywords": [],
+  "author": "DWANGO Co., Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akashic-games/actions-install/issues"
+  },
+  "homepage": "https://github.com/akashic-games/actions-install#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@akashic/eslint-config": "3.0.2",
+    "@types/node": "^24.10.0",
+    "@vercel/ncc": "^0.38.0",
+    "rimraf": "^6.1.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,8 @@
+name: npm install and check package-lock
+description: npm install --before and check package-lock.json
+inputs:
+  before_days:
+    description: How many days in advance should you target in before option
+runs:
+  using: node24
+  main: dist/index.js
